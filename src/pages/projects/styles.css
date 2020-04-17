@@ -1,0 +1,51 @@
+.container {
+    width:100%;
+    margin:30px;
+  }
+
+  .container h3{
+      text-align: center;
+  }
+
+  .container ul{
+      display:flex;
+      justify-content:center;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .container ul li {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 500px;
+    padding:20px;
+    border-radius:10px
+  }
+  
+  .container li + li {
+    margin-top: 15px;
+  }
+
+
+  .container ul li a{
+    text-decoration: none;
+    color: #222222;
+}
+
+  .container ul li a span{
+      font-weight: bold;
+  }
+  .addButton{
+    background: #7159c1;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  .removeButton{
+    margin: 0 15px;
+    background: #ca4949;
+    color:#fff
+  }
