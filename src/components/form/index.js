@@ -19,7 +19,7 @@ export default function Form({refreshList}) {
             techs: arraytechs
         }
 
-        const response = await api.post('projects', repository);
+        const response = await api.post('repositories', repository);
 
         if(response.status === 200){
             alert('Repositório salvo com sucesso!');

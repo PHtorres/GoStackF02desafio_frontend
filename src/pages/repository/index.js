@@ -3,7 +3,7 @@ import './styles.css';
 import api from '../../services/api';
 import Form from '../../components/form';
 
-export default function Projects() {
+export default function Repositories() {
 
     const [enableForm, setEnableForm] = useState(false);
     const [repositories, setRepositories] = useState([]);
@@ -13,16 +13,14 @@ export default function Projects() {
     }, []);
 
     async function refreshList() {
-        const response = await api.get('projects');
+        const response = await api.get('repositories');
         setRepositories(response.data);
     }
 
     async function handleRemoveRepository(id) {
-        const response = await api.delete(`projects/${id}`);
-        if(response.status === 204){
-            alert('Repositório removido com sucesso!');
-            refreshList();
-        }
+        await api.delete(`repositories/${id}`);
+        const newList = repositories.filter(item => item.id !== id);
+        setRepositories(newList);
     }
 
     function ShowForm() {
